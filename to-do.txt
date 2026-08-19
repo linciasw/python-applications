@@ -1,4 +1,4 @@
 
 
 - start the file for the compound interest calculator [DONE]
-- 
+- get inputs, formula down
