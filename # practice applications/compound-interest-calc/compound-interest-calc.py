@@ -5,6 +5,9 @@
 # create function to view calculation history
 
 
+calculation_list = []
+
+
 
 def get_investment_info():
 
@@ -22,24 +25,25 @@ def get_investment_info():
 
             if program == 1:
                 calculate_future_value()
+
             elif program == 2:
                 view_calc_history()
-            else:
-                continue
 
+            elif program == 3:
+                break
+
+            else:
+                print("Choice must be between 1 - 3")
 
         except (ValueError, TypeError):
             print("Choice must be between 1 - 3")
-        else:
-            break
-
 
 
 
 def calculate_future_value():
 
     initial_investment = float(input("Enter initial investment amount: "))
-    annual_interest_rate = float(input("Enter annual interest rate: ")) / 100
+    annual_interest_rate = float(input("Enter annual interest rate: "))
     investment_period = int(input("Enter investment period (years): "))
 
     rate = annual_interest_rate / 100
@@ -74,9 +78,6 @@ def calculate_future_value():
                 cf = "Monthly"
             else:
                 continue
-
-
-
         except ValueError:
             print("Choice must be between 1 - 4")
         else:
@@ -90,7 +91,7 @@ def calculate_future_value():
     print(f"""
     === Investment Summary ===
     Initial investment: ${initial_investment:,.2f}
-    Interest rate: {annual_interest_rate}%
+    Interest rate: {rate}%
     Intvestment period: {investment_period} years
     Compounding frequency: {cf}
     Total interest earned: ${total_interest_earned:,.2f}
@@ -99,7 +100,6 @@ def calculate_future_value():
 
 
 
-    calculation_list = []
     calculations = {}
 
     calculations["Investment"] = initial_investment
@@ -107,13 +107,25 @@ def calculate_future_value():
     calculations["Years"] = investment_period
     calculations["Future Value"] = final_investment_amount
 
-    calculation_list.append(calculations)
+    # calculation_list.append(calculations)
 
-    # for calculation in calculations:
+
+    # for calculation in calculation_list:
     #     print(calculation)
 
 
+    return calculation_list.append(calculations)
 
+
+
+
+def view_calc_history():
+
+    for calculation in calculation_list:
+        print(f"investment: {calculation['Investment']}")
+        print(f"Interest rate: {calculation['Interest Rate']}")
+        print(f"Years: {calculation['Years']}")
+        print(f"Future Value: {calculation['Future Value']}")
 
 
 
