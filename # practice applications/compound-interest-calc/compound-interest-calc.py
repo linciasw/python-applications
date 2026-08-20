@@ -1,19 +1,51 @@
 
 
-def main():
+
+# create functions for future value calculation [DONE]
+# create function to view calculation history
+
+
+
+def get_investment_info():
+
+    while True:
+        try: 
+
+            print("""
+                === Compound Interest Calculator ===
+                1. Calculate Future Value
+                2. View Calculation History
+                3. Exit 
+            """)
+
+            program = int(input("Select one: "))
+
+            if program == 1:
+                calculate_future_value()
+            elif program == 2:
+                view_calc_history()
+            else:
+                continue
+
+
+        except (ValueError, TypeError):
+            print("Choice must be between 1 - 3")
+        else:
+            break
+
+
+
+
+def calculate_future_value():
+
     initial_investment = float(input("Enter initial investment amount: "))
-    annual_interest_rate = float(input("Enter annual interest rate: "))
+    annual_interest_rate = float(input("Enter annual interest rate: ")) / 100
     investment_period = int(input("Enter investment period (years): "))
 
     rate = annual_interest_rate / 100
     
 
-
-
-
-
     while True:
-
         try:
 
             print("""
@@ -24,6 +56,7 @@ def main():
                             4. Monthly
             
             """)
+
             choice = int(input("Choice: "))
 
         
@@ -44,31 +77,14 @@ def main():
 
 
 
-
         except ValueError:
             print("Choice must be between 1 - 4")
         else:
             break
 
 
-
-#     A = P(1 + r/n)^(nt)
-# Where:
-
-# A = Final investment amount
-# P = Initial investment amount
-# r = Annual interest rate (decimal)
-# n = Number of times interest compounds per year
-# t = Number of years
-    
-
-   
-
     final_investment_amount = initial_investment * (1 + rate / compounding_frequency) ** (compounding_frequency * investment_period)
-
     total_interest_earned = final_investment_amount - initial_investment
-    
-
 
     
     print(f"""
@@ -82,11 +98,32 @@ def main():
           """)
 
 
-    calculation_history = {
 
-        
-    }
+    calculation_list = []
+    calculations = {}
+
+    calculations["Investment"] = initial_investment
+    calculations["Interest Rate"] = annual_interest_rate
+    calculations["Years"] = investment_period
+    calculations["Future Value"] = final_investment_amount
+
+    calculation_list.append(calculations)
+
+    # for calculation in calculations:
+    #     print(calculation)
+
+
+
+
+
+
+def main():
+
+    get_investment_info()
 
 
 
 main()
+
+
+
