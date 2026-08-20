@@ -4,4 +4,6 @@
 - get inputs, formula down [DONE]
 - think of how to store calculation history; list of dictionaries [DONE]
 - put in more exception handling (negative numbers, zero etc) 
-- 
+- write a README for all applications, check chatgpt for layout
+
+
