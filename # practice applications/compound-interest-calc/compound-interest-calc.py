@@ -138,3 +138,39 @@ main()
 
 
 
+"""
+# THINGS LEARNT
+- in control flow, one break should be done to ensure the program doesn't break out of the loop prematurely (had a break in the try-except block)
+- an else: break at the end of the try-except is not always needed and it means the meu will exit after any valid input 
+
+def get_investment_info():
+    while True:
+        try:
+            print("""
+=== Compound Interest Calculator ===
+1. Calculate Future Value
+2. View Calculation History
+3. Exit
+""")
+
+            program = int(input("Select one: "))
+
+            if program == 1:
+                calculate_future_value()
+            elif program == 2:
+                view_calc_history()
+            elif program == 3:
+                break
+
+        except (ValueError, TypeError):
+            print("Choice must be between 1 - 3")
+
+        else:
+            break
+
+
+- view_calc_history wasn't working because using " to identify the dictionary key was preventing the loop from accessing the key properly
+- 
+"""
+
+
