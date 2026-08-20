@@ -107,14 +107,13 @@ def calculate_future_value():
     calculations["Years"] = investment_period
     calculations["Future Value"] = final_investment_amount
 
-    # calculation_list.append(calculations)
+    calculation_list.append(calculations)
 
 
     # for calculation in calculation_list:
     #     print(calculation)
 
-
-    return calculation_list.append(calculations)
+    # return calculation_list.append(calculations)
 
 
 
