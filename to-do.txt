@@ -2,5 +2,6 @@
 
 - start the file for the compound interest calculator [DONE]
 - get inputs, formula down [DONE]
-- think of how to store calculation history; dictionary
-- put in more exception handling (negative numbers, zero etc)
+- think of how to store calculation history; list of dictionaries [DONE]
+- put in more exception handling (negative numbers, zero etc) 
+- 
