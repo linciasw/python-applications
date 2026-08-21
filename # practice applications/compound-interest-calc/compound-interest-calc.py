@@ -2,7 +2,9 @@
 
 
 # create functions for future value calculation [DONE]
-# create function to view calculation history
+# create function to view calculation history [DONE]
+# create function to add calculation to list [DONE]
+# create function to print summary
 
 
 calculation_list = []
@@ -24,10 +26,10 @@ def get_investment_info():
             program = int(input("Select one: "))
 
             if program == 1:
-                calculate_future_value()
+                ii, air, ip, fia, tia = calculate_future_value()
 
             elif program == 2:
-                view_calc_history()
+                view_calc_history(ii, air, ip, fia, tia)
 
             elif program == 3:
                 break
@@ -98,40 +100,50 @@ def calculate_future_value():
     Future Value: ${final_investment_amount:,.2f}
           """)
 
-
-
-    calculations = {}
-
-    calculations["Investment"] = initial_investment
-    calculations["Interest Rate"] = annual_interest_rate
-    calculations["Years"] = investment_period
-    calculations["Future Value"] = final_investment_amount
-
-    calculation_list.append(calculations)
-
-
     # for calculation in calculation_list:
     #     print(calculation)
 
     # return calculation_list.append(calculations)
 
+    add_calculation_to_list(initial_investment, annual_interest_rate, investment_period, final_investment_amount, total_interest_earned)
+
+    return initial_investment, annual_interest_rate, investment_period, final_investment_amount, total_interest_earned
 
 
 
-def view_calc_history():
+
+
+def add_calculation_to_list(ii, air, ip, fia, tia):
+    calculations = {}
+
+    calculations["Investment"] = ii
+    calculations["Interest Rate"] = air
+    calculations["Years"] = ip
+    calculations["Future Value"] = fia
+
+
+    calculation_list.append(calculations)
+
+
+
+
+
+
+def view_calc_history(ii, air, ip, fia, tia):
 
     for calculation in calculation_list:
-        print(f"investment: {calculation['Investment']}")
+        print(f"Investment: {calculation['Investment']}")
         print(f"Interest rate: {calculation['Interest Rate']}")
         print(f"Years: {calculation['Years']}")
         print(f"Future Value: {calculation['Future Value']}")
 
 
 
+
+
 def main():
 
     get_investment_info()
-
 
 
 main()
@@ -147,10 +159,10 @@ def get_investment_info():
     while True:
         try:
             print("""
-=== Compound Interest Calculator ===
-1. Calculate Future Value
-2. View Calculation History
-3. Exit
+# === Compound Interest Calculator ===
+# 1. Calculate Future Value
+# 2. View Calculation History
+# 3. Exit
 """)
 
             program = int(input("Select one: "))
