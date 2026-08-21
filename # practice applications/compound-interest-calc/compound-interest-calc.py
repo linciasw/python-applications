@@ -26,10 +26,10 @@ def get_investment_info():
             program = int(input("Select one: "))
 
             if program == 1:
-                ii, air, ip, fia, tia = calculate_future_value()
+                calculate_future_value()
 
             elif program == 2:
-                view_calc_history(ii, air, ip, fia, tia)
+                view_calc_history()
 
             elif program == 3:
                 break
@@ -89,31 +89,34 @@ def calculate_future_value():
     final_investment_amount = initial_investment * (1 + rate / compounding_frequency) ** (compounding_frequency * investment_period)
     total_interest_earned = final_investment_amount - initial_investment
 
-    
-    print(f"""
-    === Investment Summary ===
-    Initial investment: ${initial_investment:,.2f}
-    Interest rate: {rate}%
-    Intvestment period: {investment_period} years
-    Compounding frequency: {cf}
-    Total interest earned: ${total_interest_earned:,.2f}
-    Future Value: ${final_investment_amount:,.2f}
-          """)
 
-    # for calculation in calculation_list:
-    #     print(calculation)
+    print_summary(initial_investment, annual_interest_rate, investment_period, final_investment_amount, cf, total_interest_earned)
+    add_calculation_to_list(initial_investment, annual_interest_rate, investment_period, final_investment_amount)
 
-    # return calculation_list.append(calculations)
-
-    add_calculation_to_list(initial_investment, annual_interest_rate, investment_period, final_investment_amount, total_interest_earned)
 
     return initial_investment, annual_interest_rate, investment_period, final_investment_amount, total_interest_earned
 
 
 
 
+def print_summary(ii, air, ip, fia, cf, tia):
 
-def add_calculation_to_list(ii, air, ip, fia, tia):
+
+    print(f"""
+    === Investment Summary ===
+    Initial investment: ${ii:,.2f}
+    Interest rate: {air}%
+    Intvestment period: {ip} years
+    Compounding frequency: {cf}
+    Total interest earned: ${tia:,.2f}
+    Future Value: ${fia:,.2f}
+          """)
+
+
+
+
+
+def add_calculation_to_list(ii, air, ip, fia):
     calculations = {}
 
     calculations["Investment"] = ii
@@ -129,13 +132,22 @@ def add_calculation_to_list(ii, air, ip, fia, tia):
 
 
 
-def view_calc_history(ii, air, ip, fia, tia):
+def view_calc_history():
+
+    counter = 0
 
     for calculation in calculation_list:
-        print(f"Investment: {calculation['Investment']}")
-        print(f"Interest rate: {calculation['Interest Rate']}")
+
+        counter += 1
+
+        print(f"Investment# {counter}")
+        print(f"Investment: ${calculation['Investment']}")
+        print(f"Interest rate: {calculation['Interest Rate']}%")
         print(f"Years: {calculation['Years']}")
-        print(f"Future Value: {calculation['Future Value']}")
+        print(f"Future Value: ${calculation['Future Value']}")
+
+
+
 
 
 
