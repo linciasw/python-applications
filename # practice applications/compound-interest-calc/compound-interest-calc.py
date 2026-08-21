@@ -86,6 +86,9 @@ def calculate_future_value():
             break
 
 
+        print()
+
+
     final_investment_amount = initial_investment * (1 + rate / compounding_frequency) ** (compounding_frequency * investment_period)
     total_interest_earned = final_investment_amount - initial_investment
 
@@ -141,14 +144,14 @@ def view_calc_history():
         counter += 1
 
         print(f"Investment# {counter}")
-        print(f"Investment: ${calculation['Investment']}")
+        print(f"Investment: ${calculation['Investment']:,.2f}")
         print(f"Interest rate: {calculation['Interest Rate']}%")
         print(f"Years: {calculation['Years']}")
-        print(f"Future Value: ${calculation['Future Value']}")
+        print(f"Future Value: ${calculation['Future Value']:,.2f}")
 
 
 
-
+        print()
 
 
 
