@@ -1,8 +1,8 @@
-# FinAtlas TT — Project Specification Sheet
+# TT Finance Index — Project Specification Sheet
 
 ## Table of Contents
 
-- [FinAtlas TT — Project Specification Sheet](#finatlas-tt--project-specification-sheet)
+- [TT Finance Index — Project Specification Sheet](#tt-finance-index--project-specification-sheet)
   - [Table of Contents](#table-of-contents)
 - [1. Project Overview](#1-project-overview)
 - [2. Project Goal](#2-project-goal)
@@ -77,7 +77,7 @@
 
 # 1. Project Overview
 
-**Project Name:** FinAtlas TT
+**Project Name:** TT Finance Index
 
 **Project Type:** Financial data analysis and comparison application
 
@@ -129,7 +129,7 @@ A person researching where to place an emergency fund may need to manually compa
 * Term deposits
 * Other low-risk financial products
 
-FinAtlas TT will centralize this information into a structured dataset and provide analytical tools for comparing the products.
+TT Finance Index will centralize this information into a structured dataset and provide analytical tools for comparing the products.
 
 ---
 
