@@ -1,5 +1,6 @@
 # TT Finance Index — Project Specification Sheet
 
+
 ## Table of Contents
 
 - [TT Finance Index — Project Specification Sheet](#tt-finance-index--project-specification-sheet)
@@ -15,6 +16,7 @@
 - [8. Institution Data](#8-institution-data)
 - [9. Financial Product Data](#9-financial-product-data)
 - [10. Data Collection](#10-data-collection)
+  - [Financial Institutions List](#financial-institutions-list)
   - [Initial Method](#initial-method)
   - [Important Rule](#important-rule)
 - [11. Data Validation](#11-data-validation)
@@ -339,6 +341,9 @@ product = {
 
 # 10. Data Collection
 
+## Financial Institutions List
+https://www.central-bank.org.tt/core-functions/financial-stability/banking-sector/ 
+
 ## Initial Method
 
 Financial-product information will initially be entered manually into CSV files.
@@ -659,7 +664,7 @@ The CLI application could eventually contain:
 
 ```text
 ========================================
-          FINATLAS TT
+          TT FINANCE INDEX
 ========================================
 
 1. View institutions
@@ -685,7 +690,7 @@ Select an option:
 Initial structure:
 
 ```text
-finatlas-tt/
+tt-finance-index/
 │
 ├── README.md
 │
@@ -1155,7 +1160,7 @@ The recommendation should always explain **why** a product was selected rather t
 
 # Final Project Vision
 
-FinAtlas TT should ultimately become:
+TT Finance Index should ultimately become:
 
 > **A data-driven financial-product research and comparison platform for Trinidad & Tobago.**
 
