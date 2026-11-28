@@ -39,9 +39,11 @@ jobs:
         run: python -m pytest -q
 
       - name: Check job sites
-        run: python -m job_hunter.main
+        # Code pushes are test runs: they check every site but don't save anything.
+        run: python -m job_hunter.main ${{ github.event_name == 'push' && '--dry-run' || '' }}
 
       - name: Save results
+        if: github.event_name != 'push'
         run: |
           git config user.name "job-hunter bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
