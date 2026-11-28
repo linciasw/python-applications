@@ -1,10 +1,10 @@
-# Source status — 2026-11-27
+# Source status — 2026-11-28
 
 | Source | Type | Jobs read | Matches | Status |
 |---|---|---|---|---|
 | CaribbeanJobs - IT (Trinidad) | links | 9 | 7 | ✅ |
 | First Citizens - ICT | successfactors | 0 | 0 | ✅ |
-| ANSA McAL | successfactors | 20 | 1 | ✅ |
+| ANSA McAL | successfactors | 20 | 2 | ✅ |
 | Digicel | successfactors | 1 | 0 | ✅ |
 | TransUnion | workday | 0 | 0 | ❌ HTTPError: 429 Client Error: Too Many Requests for url: https://transunion.wd5.myworkdayjobs.com/wday/cxs/transunion/Tra |
 | Guardian Group | oracle_hcm | 36 | 1 | ✅ |
