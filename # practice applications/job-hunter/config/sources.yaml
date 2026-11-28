@@ -179,34 +179,6 @@ sources:
     location: tt
     urls: [https://www.central-bank.org.tt/category/careers]
 
-  - name: Nutrien (Point Lisas)
-    type: successfactors
-    company: Nutrien
-    base_url: https://jobs.nutrien.com
-    location: filter
-    query: Point Lisas
-
-  - name: Fujitsu Caribbean
-    type: successfactors
-    company: Fujitsu Caribbean
-    base_url: https://www.jobs.global.fujitsu.com
-    location: filter
-    query: Trinidad
-
-  - name: EY Caribbean
-    type: successfactors
-    company: EY
-    base_url: https://careers.ey.com/ey
-    location: filter
-    query: Port of Spain
-
-  - name: IDB (Port of Spain office)
-    type: successfactors
-    company: Inter-American Development Bank
-    base_url: https://jobs.iadb.org
-    location: filter
-    query: Port of Spain
-
   - name: TTSEC
     type: page_watch
     company: TT Securities and Exchange Commission
