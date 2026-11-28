@@ -47,8 +47,10 @@ sources:
     location_search: Trinidad
 
   - name: Shell
-    type: workday
+    type: manual            # switch back to "workday" to retry; the settings below are ready
     company: Shell
+    url: https://shell.wd3.myworkdayjobs.com/en-GB/ShellCareers?q=Trinidad
+    why: Shell's Workday rate-limits GitHub's servers (429) - search "Trinidad"
     base_url: https://shell.wd3.myworkdayjobs.com
     tenant: shell
     site: ShellCareers
