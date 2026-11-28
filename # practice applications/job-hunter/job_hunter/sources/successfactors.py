@@ -61,9 +61,10 @@ def parse(html: str, cfg: dict) -> tuple[list[Job], int]:
 def fetch(cfg: dict) -> list[Job]:
     base = cfg["base_url"].rstrip("/")
     loc = quote_plus(cfg.get("location_search", ""))
+    q = quote_plus(cfg.get("query", ""))
     out: dict[str, Job] = {}
     for page in range(MAX_PAGES):
-        url = (f"{base}/search/?q=&locationsearch={loc}&sortColumn=referencedate"
+        url = (f"{base}/search/?q={q}&locationsearch={loc}&sortColumn=referencedate"
                f"&sortDirection=desc&startrow={page * PAGE_SIZE}")
         jobs, total = parse(http.get(url).text, cfg)
         new = [j for j in jobs if j.id not in out]

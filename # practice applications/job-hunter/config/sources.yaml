@@ -59,7 +59,10 @@ sources:
     search_terms: [Trinidad, Port of Spain]
 
   - name: TransUnion
-    type: workday
+    type: manual            # switch back to "workday" to retry
+    url: https://transunion.wd5.myworkdayjobs.com/en-US/TransUnion?q=Trinidad
+    why: TransUnion's Workday rate-limits GitHub's servers (429) - search "Trinidad"
+    workday_settings: ready
     company: TransUnion
     base_url: https://transunion.wd5.myworkdayjobs.com
     tenant: transunion
@@ -181,79 +184,34 @@ sources:
     company: Nutrien
     base_url: https://jobs.nutrien.com
     location: filter
-    location_search: Point Lisas
+    query: Point Lisas
 
   - name: Fujitsu Caribbean
     type: successfactors
     company: Fujitsu Caribbean
     base_url: https://www.jobs.global.fujitsu.com
     location: filter
-    location_search: Trinidad
+    query: Trinidad
 
   - name: EY Caribbean
     type: successfactors
     company: EY
     base_url: https://careers.ey.com/ey
     location: filter
-    location_search: Port of Spain
+    query: Port of Spain
 
   - name: IDB (Port of Spain office)
     type: successfactors
     company: Inter-American Development Bank
     base_url: https://jobs.iadb.org
     location: filter
-    location_search: Port of Spain
-
-  - name: Citi Trinidad & Tobago
-    type: links
-    company: Citi
-    location: tt
-    urls:
-      - https://jobs.citi.com/location/trinidad-and-tobago-jobs/287/3573591/2
-    link_regex: '^https?://(www\.)?jobs\.citi\.com/job/port-of-spain/[^/]+/287/\d+'
-
-  - name: CARICOM IMPACS
-    type: links
-    company: CARICOM IMPACS
-    location: tt
-    urls:
-      - https://caricomimpacs.org/vacancies
-    link_regex: '^https?://(www\.)?caricomimpacs\.org/vacancies/job-opportunity-[a-z0-9-]+'
-
-  - name: UTT
-    type: links
-    company: University of Trinidad and Tobago
-    location: tt
-    urls:
-      - https://utt.edu.tt/vacancies
-    link_regex: '^https?://(www\.)?utt\.edu\.tt/vacancies/[a-z0-9-]+$'
-
-  - name: Energy Chamber job board
-    type: links
-    company: (energy sector, various)
-    location: tt
-    urls:
-      - https://energynow.tt/energy-sector-vacancies-current
-      - https://energynow.tt/energy-sector-vacancies
-    link_regex: '^https?://(www\.)?energynow\.tt/energy-sector-vacancies/[a-z0-9-]+$'
+    query: Port of Spain
 
   - name: TTSEC
     type: page_watch
     company: TT Securities and Exchange Commission
     location: tt
     urls: [https://www.ttsec.org.tt/about-us/careers/vacancies/]
-
-  - name: CARPHA
-    type: page_watch
-    company: CARPHA
-    location: tt
-    urls: [https://www.carpha.org/More/CARPHA-Talent-Acquisition]
-
-  - name: ECLAC
-    type: page_watch
-    company: UN ECLAC (Caribbean office)
-    location: filter
-    urls: [https://www.cepal.org/en/about/employment]
 
   - name: bp Trinidad & Tobago
     type: manual
