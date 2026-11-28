@@ -24,7 +24,8 @@ sources:
     urls:
       - https://www.caribbeanjobs.com/ShowResults.aspx?Category=3&SortBy=Relevance&rbloc=124&lr=4&PerPage=100
       - https://www.caribbeanjobs.com/Trinidad-and-Tobago/IT-Jobs?PerPage=100
-    link_regex: '^https?://(www\.)?caribbeanjobs\.com/[^/?#]+-Job-\d+\.aspx$'
+      - https://www.caribbeanjobs.com/Trinidad-and-Tobago/Port-of-Spain/IT-Jobs?PerPage=100
+    link_regex: '^https?://(www\.)?caribbeanjobs\.com/([^/?#]+-Job-\d+\.aspx|JobDesc\.aspx\?Id=\d+)$'
     title_from: caribbeanjobs
 
   - name: First Citizens - ICT
@@ -93,7 +94,7 @@ sources:
     type: page_watch
     company: NGC
     location: tt
-    urls: [https://ngc.co.tt/career-opportunities/]
+    urls: [https://ngc.co.tt/career-opportunities/, https://ngc.co.tt/careers/]
 
   - name: Republic Bank (RFHL)
     type: manual
@@ -174,6 +175,85 @@ sources:
     company: Central Bank of T&T
     location: tt
     urls: [https://www.central-bank.org.tt/category/careers]
+
+  - name: Nutrien (Point Lisas)
+    type: successfactors
+    company: Nutrien
+    base_url: https://jobs.nutrien.com
+    location: filter
+    location_search: Point Lisas
+
+  - name: Fujitsu Caribbean
+    type: successfactors
+    company: Fujitsu Caribbean
+    base_url: https://www.jobs.global.fujitsu.com
+    location: filter
+    location_search: Trinidad
+
+  - name: EY Caribbean
+    type: successfactors
+    company: EY
+    base_url: https://careers.ey.com/ey
+    location: filter
+    location_search: Port of Spain
+
+  - name: IDB (Port of Spain office)
+    type: successfactors
+    company: Inter-American Development Bank
+    base_url: https://jobs.iadb.org
+    location: filter
+    location_search: Port of Spain
+
+  - name: Citi Trinidad & Tobago
+    type: links
+    company: Citi
+    location: tt
+    urls:
+      - https://jobs.citi.com/location/trinidad-and-tobago-jobs/287/3573591/2
+    link_regex: '^https?://(www\.)?jobs\.citi\.com/job/port-of-spain/[^/]+/287/\d+'
+
+  - name: CARICOM IMPACS
+    type: links
+    company: CARICOM IMPACS
+    location: tt
+    urls:
+      - https://caricomimpacs.org/vacancies
+    link_regex: '^https?://(www\.)?caricomimpacs\.org/vacancies/job-opportunity-[a-z0-9-]+'
+
+  - name: UTT
+    type: links
+    company: University of Trinidad and Tobago
+    location: tt
+    urls:
+      - https://utt.edu.tt/vacancies
+    link_regex: '^https?://(www\.)?utt\.edu\.tt/vacancies/[a-z0-9-]+$'
+
+  - name: Energy Chamber job board
+    type: links
+    company: (energy sector, various)
+    location: tt
+    urls:
+      - https://energynow.tt/energy-sector-vacancies-current
+      - https://energynow.tt/energy-sector-vacancies
+    link_regex: '^https?://(www\.)?energynow\.tt/energy-sector-vacancies/[a-z0-9-]+$'
+
+  - name: TTSEC
+    type: page_watch
+    company: TT Securities and Exchange Commission
+    location: tt
+    urls: [https://www.ttsec.org.tt/about-us/careers/vacancies/]
+
+  - name: CARPHA
+    type: page_watch
+    company: CARPHA
+    location: tt
+    urls: [https://www.carpha.org/More/CARPHA-Talent-Acquisition]
+
+  - name: ECLAC
+    type: page_watch
+    company: UN ECLAC (Caribbean office)
+    location: filter
+    urls: [https://www.cepal.org/en/about/employment]
 
   - name: bp Trinidad & Tobago
     type: manual

@@ -124,6 +124,12 @@ def run(only: str = "", dry_run: bool = False) -> int:
     if not dry_run:
         state_path.parent.mkdir(exist_ok=True)
         state_path.write_text(json.dumps(state, indent=1, sort_keys=True))
+    if os.environ.get("GITHUB_ACTIONS"):
+        lines = [f"{'ERR' if r.error else 'ok'} {r.name}: {len(r.jobs)} read, {r.note} matched"
+                 + (f" - {r.error[:90]}" if r.error else "") for r in results]
+        print("::notice title=job-hunter sources::" + "%0A".join(lines))
+        top = [f"{j['score']} {j['title'][:60]} ({j['company'] or j['source']})" for j in open_jobs[:25]]
+        print("::notice title=job-hunter top matches::" + "%0A".join(top))
     print(f"\n{len(open_jobs)} open matches, {len(new_jobs)} new, {len(failed)} source(s) failed.")
     return 0
 
