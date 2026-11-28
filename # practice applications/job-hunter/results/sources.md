@@ -7,14 +7,13 @@
 | ANSA McAL | successfactors | 20 | 1 | ✅ |
 | Digicel | successfactors | 1 | 0 | ✅ |
 | Shell | workday | 0 | 0 | ❌ HTTPError: 429 Client Error: Too Many Requests for url: https://shell.wd3.myworkdayjobs.com/wday/cxs/shell/ShellCareers/ |
-| TransUnion | workday | 40 | 1 | ✅ |
+| TransUnion | workday | 40 | 0 | ✅ |
 | Guardian Group | oracle_hcm | 36 | 1 | ✅ |
 | EmployTT (Government) | links | 20 | 2 | ✅ |
 | JobsTT | links | 10 | 0 | ✅ |
 | NGC | page_watch | 1 | 0 | ✅ |
 | JMMB | page_watch | 0 | 0 | ✅ |
 | Scotiabank | successfactors | 1 | 0 | ✅ |
-| Liberty Latin America (Flow / C&W Business) | icims | 0 | 0 | ❌ HTTPError: 405 Client Error: Not Allowed for url: https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad& |
 | Central Bank of T&T | page_watch | 0 | 0 | ✅ |
 
 ## Check these by hand
@@ -27,5 +26,6 @@
 - [Deloitte Caribbean](https://talentsourcing.deloitte.com/cbcapply/SearchJobs) — JavaScript-only portal
 - [Caribbean Airlines](https://careers.caribbean-airlines.com/#/) — JavaScript-only portal
 - [CandidateManager portal](https://www.candidatemanager.net/cm/p/pJobs.aspx?mid=CXAZYGT&sid=YYUU) — JavaScript-only portal
+- [Liberty Latin America (Flow / C&W Business)](https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad) — iCIMS blocks automated access (405) - search "Trinidad"
 - [The Hive Careers (T&T recruiter, remote IT roles)](https://careers-page.com/thehivecareers) — job list is loaded by JavaScript - search it for "Trinidad"
 - [bp Trinidad & Tobago](https://careers.bp.com/search-jobs?location=Trinidad%20and%20Tobago) — JavaScript-only search page

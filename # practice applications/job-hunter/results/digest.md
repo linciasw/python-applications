@@ -1,16 +1,9 @@
-**3 new ICT job(s) found** on 2026-11-27.
+**0 new ICT job(s) found** on 2026-11-27.
 
-- **[Enterprise Banking Lead](https://transunion.wd5.myworkdayjobs.com/en-US/TransUnion/job/Remote-United-Kingdom/Enterprise-Banking-Lead_19043209)** — TransUnion · Remote, United Kingdom · Posted 14 Days Ago · remote  
-  score 6 · resume: *Automation / IT*
-- **[IT Technician](https://employtt.gov.tt/jobs/view/2948)** — (Government of T&T) · National Insurance Property Development Company Limited (NIPDEC)  
-  score 5 · resume: *Automation / IT*
-- **[Manager, Networks and Infrastructure](https://employtt.gov.tt/jobs/view/2927)** — (Government of T&T) · Ministry of Land and Legal Affairs  
-  score 5 · resume: *Automation / IT*
 
 <details><summary>⚠️ Sources that failed today</summary>
 
 - Shell: HTTPError: 429 Client Error: Too Many Requests for url: https://shell.wd3.myworkdayjobs.com/wday/cxs/shell/ShellCareers/jobs
-- Liberty Latin America (Flow / C&W Business): HTTPError: 405 Client Error: Not Allowed for url: https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad&pr=0
 
 </details>
 
@@ -24,6 +17,7 @@
 - [Deloitte Caribbean](https://talentsourcing.deloitte.com/cbcapply/SearchJobs)
 - [Caribbean Airlines](https://careers.caribbean-airlines.com/#/)
 - [CandidateManager portal](https://www.candidatemanager.net/cm/p/pJobs.aspx?mid=CXAZYGT&sid=YYUU)
+- [Liberty Latin America (Flow / C&W Business)](https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad)
 - [The Hive Careers (T&T recruiter, remote IT roles)](https://careers-page.com/thehivecareers)
 - [bp Trinidad & Tobago](https://careers.bp.com/search-jobs?location=Trinidad%20and%20Tobago)
 

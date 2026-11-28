@@ -28,9 +28,9 @@
   score 6 · resume: *Automation / IT*
 - 🆕 **[System Engineer](https://www.caribbeanjobs.com/System-Engineer-Job-242091.aspx)** — (various) · Voice Outsourcing Ltd (Trinidad & Tobago)  
   score 5 · resume: *Automation / IT*
-- 🆕 **[IT Technician](https://www.caribbeanjobs.com/IT-Technician-Job-242245.aspx)** — (various) · Not for me IT Technician NIPDEC Not disclosed Updated 25/11/2026 D'Martin/Chaguaramas To p  
+- 🆕 **[Manager, Networks and Infrastructure](https://employtt.gov.tt/jobs/view/2927)** — (Government of T&T) · Ministry of Land and Legal Affairs  
+  score 5 · resume: *Automation / IT*
+- 🆕 **[IT Technician](https://www.caribbeanjobs.com/IT-Technician-Job-242245.aspx)** — (various) · NIPDEC Not disclosed Updated 25/11/2026 D'Martin/Chaguaramas To provide hardware and softw  
   score 5 · resume: *Automation / IT*
 - 🆕 **[IT Technician](https://employtt.gov.tt/jobs/view/2948)** — (Government of T&T) · National Insurance Property Development Company Limited (NIPDEC)  
-  score 5 · resume: *Automation / IT*
-- 🆕 **[Manager, Networks and Infrastructure](https://employtt.gov.tt/jobs/view/2927)** — (Government of T&T) · Ministry of Land and Legal Affairs  
   score 5 · resume: *Automation / IT*
