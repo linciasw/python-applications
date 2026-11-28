@@ -1,0 +1,129 @@
+# Lincia's job-matching profile.
+# Built from her three resumes (Software Engineering, Data Analytics,
+# Automation & Digital Transformation). Edit freely - the scraper reads this
+# file on every run.
+
+# A job title must hit at least one of these to be considered ICT.
+# weight = how well the role fits what she is targeting.
+# track  = which resume to send.
+title_keywords:
+  # --- Software engineering ---
+  - {pattern: "software (engineer|developer|development)", weight: 10, track: software}
+  - {pattern: "(full[- ]?stack|back[- ]?end|front[- ]?end|web|mobile|python|java|\\.net|php) (developer|engineer)", weight: 10, track: software}
+  - {pattern: "\\bdeveloper\\b", weight: 9, track: software}
+  - {pattern: "programmer", weight: 9, track: software}
+  - {pattern: "application(s)? (developer|engineer|analyst)", weight: 9, track: software}
+  - {pattern: "programmer analyst|analyst programmer", weight: 10, track: software}
+  - {pattern: "(qa|quality assurance|test|testing) (engineer|analyst|automation)", weight: 6, track: software}
+  # --- Data ---
+  - {pattern: "data (analyst|analytics|engineer|scientist|science|specialist|officer)", weight: 10, track: data}
+  - {pattern: "business intelligence|\\bbi\\b (analyst|developer)|power bi|reporting analyst", weight: 9, track: data}
+  - {pattern: "machine learning|\\bml\\b|artificial intelligence|\\bai\\b", weight: 8, track: data}
+  - {pattern: "database|\\bdba\\b|sql", weight: 7, track: data}
+  - {pattern: "\\banalytics\\b|insights analyst", weight: 7, track: data}
+  # --- Automation / digital transformation ---
+  - {pattern: "automation|\\brpa\\b|devops|site reliability|\\bsre\\b", weight: 9, track: automation}
+  - {pattern: "digital (transformation|solutions|product|innovation)|process improvement", weight: 8, track: automation}
+  - {pattern: "(systems?|it|technical|solutions?) analyst", weight: 8, track: automation}
+  - {pattern: "business (systems )?analyst", weight: 6, track: automation}
+  - {pattern: "integrat(ion|or)|hris|erp|crm|sharepoint|power platform|dynamics 365", weight: 6, track: automation}
+  # --- Infrastructure / security / cloud ---
+  - {pattern: "cloud|azure|aws", weight: 6, track: automation}
+  - {pattern: "cyber|information security|security (analyst|engineer|specialist)|\\bsoc\\b", weight: 6, track: software}
+  - {pattern: "network (engineer|administrator|analyst|specialist)", weight: 5, track: automation}
+  - {pattern: "systems? (administrator|engineer)|infrastructure|active directory|microsoft 365|exchange", weight: 5, track: automation}
+  # --- General ICT (catch-all) ---
+  - {pattern: "\\b(it|ict|i\\.t\\.|information technology|information systems|technology)\\b", weight: 5, track: automation}
+  - {pattern: "technical support|it support|service desk|help ?desk|desktop support", weight: 3, track: automation}
+
+# Titles with these words are dropped unless they ALSO contain a strong ICT
+# word above with weight >= 8 (e.g. "Electrical Engineer" is dropped,
+# "Data Engineer" is kept).
+exclude_title:
+  - "mechanical|electrical|civil|structural|chemical|process engineer|petroleum|reservoir|drilling|completions|geolog|geophysic|subsurface|instrument|piping"
+  - "sales|account executive|accountant|accounting|teller|cashier|driver|technician - (mechanical|electrical)|nurse|chef|cook"
+  - "attorney|legal counsel|underwrit|actuar|marketing|communications officer"
+
+# Title adjustments (added to the score).
+title_adjust:
+  - {pattern: "\\b(chief|vp|vice president|head of|director)\\b", weight: -4}
+  - {pattern: "\\b(senior manager|general manager)\\b", weight: -3}
+  - {pattern: "\\b(intern|internship|trainee|apprentice)\\b", weight: -4}
+  - {pattern: "\\bjunior\\b|\\bentry\\b|graduate", weight: -1}
+  - {pattern: "\\b(senior|sr\\.?|ii|iii|lead)\\b", weight: 1}
+
+# If a source gives a job description, each of these skills found adds +1
+# (capped at max_skill_bonus).
+skills:
+  - python
+  - sql
+  - mysql
+  - powershell
+  - pandas
+  - numpy
+  - streamlit
+  - plotly
+  - java
+  - php
+  - c\+\+
+  - javascript
+  - git
+  - jupyter
+  - active directory
+  - microsoft 365|office 365|m365
+  - exchange
+  - citrix
+  - unix|aix|linux
+  - windows server
+  - automation|scripting
+  - crystal reports
+  - power bi|tableau
+  - itsm|itil|sysaid|servicenow
+  - uat|user acceptance
+  - machine learning|artificial intelligence
+max_skill_bonus: 6
+
+# Location rules. A job is kept if its location mentions Trinidad & Tobago,
+# or (if allow_remote) says remote.
+locations:
+  tt_terms:
+    - trinidad
+    - tobago
+    - port of spain
+    - port-of-spain
+    - san fernando
+    - chaguanas
+    - arima
+    - trincity
+    - couva
+    - point lisas
+    - westmoorings
+    - champs fleurs
+    - st\. augustine
+    - st augustine
+    - san juan
+    - barataria
+    - debe
+    - penal
+    - diego martin
+    - chaguaramas
+    - maraval
+    - tunapuna
+    - piarco
+    - point fortin
+    - la brea
+    - scarborough
+    - "\\bTT-"
+    - "\\bTTO\\b"
+    - ", TT\\b"
+  allow_remote: true
+  remote_penalty: -1
+
+# Jobs scoring below this are hidden.
+min_score: 5
+
+# Which resume to attach, per track.
+resumes:
+  software: Lincia_Walters_Resume_Software_Engineering.pdf
+  data: Lincia_Walters_Resume_Data_Analytics.pdf
+  automation: Lincia_Walters_Resume_Automation_Digital_Transformation.pdf

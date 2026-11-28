@@ -1,0 +1,182 @@
+# Where to look for jobs.
+#
+# type:
+#   workday         - *.myworkdayjobs.com sites (JSON API)
+#   oracle_hcm      - Oracle Recruiting Cloud (fa-*.oraclecloud.com) sites (REST API)
+#   successfactors  - SAP SuccessFactors "Career Site Builder" sites (careers.x.com/go/... or /search/)
+#   icims           - *.icims.com sites
+#   links           - any page where every job is a link matching `link_regex`
+#   page_watch      - a careers page with no structure; reports new links that look like vacancies
+#   manual          - can't be read automatically (login, blocked, or needs a browser); listed in the
+#                     digest as "check by hand"
+#
+# location: "tt"     - every job on this source is in Trinidad & Tobago, no filtering needed
+#           "filter" - the source is regional/global; keep only TT (and remote) jobs
+#
+# enabled: false turns a source off without deleting it.
+
+sources:
+  # ---------------- From your bookmarks ----------------
+  - name: CaribbeanJobs - IT (Trinidad)
+    type: links
+    company: (various)
+    location: tt
+    urls:
+      - https://www.caribbeanjobs.com/ShowResults.aspx?Category=3&SortBy=Relevance&rbloc=124&lr=4&PerPage=100
+    link_regex: '^https?://(www\.)?caribbeanjobs\.com/[^/?#]+-Job-\d+\.aspx$'
+    title_from: caribbeanjobs
+
+  - name: First Citizens - ICT
+    type: successfactors
+    company: First Citizens Bank
+    base_url: https://careers.firstcitizenstt.com
+    location: tt
+
+  - name: ANSA McAL
+    type: successfactors
+    company: ANSA McAL Group
+    base_url: https://careers.ansamcal.com
+    location: filter
+
+  - name: Digicel
+    type: successfactors
+    company: Digicel
+    base_url: https://careers.digicelgroup.com
+    location: filter
+    location_search: Trinidad
+
+  - name: Shell
+    type: workday
+    company: Shell
+    base_url: https://shell.wd3.myworkdayjobs.com
+    tenant: shell
+    site: ShellCareers
+    location: filter
+    search_terms: [Trinidad, Port of Spain]
+
+  - name: TransUnion
+    type: workday
+    company: TransUnion
+    base_url: https://transunion.wd5.myworkdayjobs.com
+    tenant: transunion
+    site: TransUnion
+    location: filter
+    search_terms: [Trinidad, Remote]
+
+  - name: Guardian Group
+    type: oracle_hcm
+    company: Guardian Group
+    base_url: https://fa-eqnr-saasfaprod1.fa.ocs.oraclecloud.com
+    site_number: CX_1020
+    location: filter
+
+  - name: EmployTT (Government)
+    type: links
+    company: (Government of T&T)
+    location: tt
+    urls:
+      - https://employtt.gov.tt/jobs
+    link_regex: '^https?://(www\.)?employtt\.gov\.tt/jobs/view/\d+'
+
+  - name: JobsTT
+    type: links
+    company: (various)
+    location: tt
+    urls:
+      - https://jobstt.com/job
+    link_regex: '^https?://(www\.)?jobstt\.com/job/[a-z0-9-]+/?$'
+
+  - name: NGC
+    type: page_watch
+    company: NGC
+    location: tt
+    urls: [https://ngc.co.tt/career-opportunities/]
+
+  - name: Republic Bank (RFHL)
+    type: page_watch
+    company: Republic Bank
+    location: tt
+    urls: [https://rfhl.com/trinidad-and-tobago/en/bank/about/career-opportunities]
+
+  - name: JMMB
+    type: page_watch
+    company: JMMB
+    location: tt
+    urls: [https://tt.jmmb.com/about-careers]
+
+  - name: RBC
+    type: manual
+    company: RBC Royal Bank
+    url: https://jobs.rbc.com/ca/en/search-results?keywords=Trinidad
+    why: JavaScript-only search page
+
+  - name: Sagicor
+    type: manual
+    company: Sagicor
+    url: https://career4.successfactors.com/career?company=sagicorfinP2&career_ns=job_listing_summary&navBarLevel=JOB_SEARCH
+    why: old SuccessFactors portal that blocks automated access
+
+  - name: LinkedIn
+    type: manual
+    company: (various)
+    url: https://www.linkedin.com/jobs/search/?keywords=software%20OR%20data%20OR%20automation&location=Trinidad%20and%20Tobago
+    why: LinkedIn forbids scraping - set up LinkedIn job alerts instead
+
+  - name: UWI St. Augustine
+    type: manual
+    company: UWI
+    url: https://careers.sta.uwi.edu/psc/careers/EMPLOYEE/HRMS/c/HRS_HRAM.HRS_CE.GBL?Page=HRS_CE_HM_POST&Action=U
+    why: PeopleSoft portal that needs a browser session
+
+  - name: Deloitte Caribbean
+    type: manual
+    company: Deloitte
+    url: https://talentsourcing.deloitte.com/cbcapply/SearchJobs
+    why: JavaScript-only portal
+
+  - name: Caribbean Airlines
+    type: manual
+    company: Caribbean Airlines
+    url: https://careers.caribbean-airlines.com/#/
+    why: JavaScript-only portal
+
+  - name: CandidateManager portal
+    type: manual
+    company: (bookmarked employer)
+    url: https://www.candidatemanager.net/cm/p/pJobs.aspx?mid=CXAZYGT&sid=YYUU
+    why: JavaScript-only portal
+
+  # ---------------- Recommended additions ----------------
+  - name: Scotiabank
+    type: successfactors
+    company: Scotiabank
+    base_url: https://jobs.scotiabank.com
+    location: filter
+    location_search: Trinidad
+
+  - name: Liberty Latin America (Flow / C&W Business)
+    type: icims
+    company: Liberty Latin America
+    base_url: https://careers-lla.icims.com
+    location: filter
+    search_terms: [Trinidad]
+
+  - name: The Hive Careers (T&T recruiter, remote IT roles)
+    type: links
+    company: (via The Hive)
+    location: filter
+    urls:
+      - https://careers-page.com/thehivecareers
+    link_regex: '^https?://(www\.)?careers-page\.com/thehivecareers/job/[A-Z0-9]+$'
+
+  - name: Central Bank of T&T
+    type: page_watch
+    company: Central Bank of T&T
+    location: tt
+    urls: [https://www.central-bank.org.tt/category/careers]
+
+  - name: bp Trinidad & Tobago
+    type: manual
+    company: bp
+    url: https://careers.bp.com/search-jobs?location=Trinidad%20and%20Tobago
+    why: JavaScript-only search page

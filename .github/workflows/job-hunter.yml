@@ -1,0 +1,72 @@
+name: job-hunter daily
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # 6:17 AM Trinidad time, every day
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+  push:
+    paths:
+      - "# practice applications/job-hunter/job_hunter/**"
+      - "# practice applications/job-hunter/config/**"
+      - ".github/workflows/job-hunter.yml"
+
+permissions:
+  contents: write   # save results back to the repo
+  issues: write     # post the daily digest
+
+concurrency:
+  group: job-hunter
+  cancel-in-progress: false
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: "# practice applications/job-hunter"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: "# practice applications/job-hunter/requirements.txt"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Check job sites
+        run: python -m job_hunter.main
+
+      - name: Save results
+        run: |
+          git config user.name "job-hunter bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data results
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "job-hunter: results for $(TZ=America/Port_of_Spain date +%F)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Post digest as an issue
+        # Only on the daily schedule or a manual run, and only when something new turned up.
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NEW=$(cat results/new_count.txt)
+          if [ "$NEW" -gt 0 ]; then
+            gh issue create \
+              --title "🧑‍💻 $NEW new ICT job(s) — $(TZ=America/Port_of_Spain date +%F)" \
+              --body-file results/digest.md
+          else
+            echo "Nothing new today"
+          fi
