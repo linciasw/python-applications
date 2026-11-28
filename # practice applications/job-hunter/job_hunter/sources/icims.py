@@ -40,7 +40,7 @@ def fetch(cfg: dict) -> list[Job]:
     for term in cfg.get("search_terms") or [""]:
         for page in range(MAX_PAGES):
             url = (f"{base}/jobs/search?ss=1&searchKeyword={quote_plus(term)}"
-                   f"&in_iframe=1&pr={page}")
+                   f"&pr={page}")
             jobs = parse(http.get(url).text, cfg)
             new = [j for j in jobs if j.id not in out]
             for j in new:

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import traceback
 from datetime import datetime, timezone, timedelta
@@ -28,6 +29,29 @@ TT_TZ = timezone(timedelta(hours=-4))  # Trinidad & Tobago, no DST
 
 def load_yaml(name: str) -> dict:
     return yaml.safe_load((ROOT / "config" / name).read_text(encoding="utf-8"))
+
+
+def _norm(title: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+
+
+def dedupe(matched: dict[str, dict]) -> dict[str, dict]:
+    """The same advert often appears on a job board AND the employer's own site.
+    Keep the employer's copy (it has a real company name)."""
+    by_title: dict[str, str] = {}
+    for jid, j in list(matched.items()):
+        key = _norm(j["title"])
+        if len(key) < 20 or key not in by_title:
+            by_title.setdefault(key, jid)
+            continue
+        other = matched[by_title[key]]
+        board = lambda x: x["company"].startswith("(")  # noqa: E731
+        if board(other) and not board(j):
+            del matched[by_title[key]]
+            by_title[key] = jid
+        elif board(j):
+            del matched[jid]
+    return matched
 
 
 def run(only: str = "", dry_run: bool = False) -> int:
@@ -61,6 +85,8 @@ def run(only: str = "", dry_run: bool = False) -> int:
         results.append(res)
         print(f"[{'ERR' if res.error else ' ok'}] {src['name']}: {len(res.jobs)} read, {len(kept)} matched"
               + (f" — {res.error}" if res.error else ""), flush=True)
+
+    matched = dedupe(matched)
 
     # Sources that failed today shouldn't make their jobs look closed.
     failed = {r.name for r in results if r.error}

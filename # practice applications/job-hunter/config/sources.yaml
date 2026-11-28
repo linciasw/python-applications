@@ -23,6 +23,7 @@ sources:
     location: tt
     urls:
       - https://www.caribbeanjobs.com/ShowResults.aspx?Category=3&SortBy=Relevance&rbloc=124&lr=4&PerPage=100
+      - https://www.caribbeanjobs.com/Trinidad-and-Tobago/IT-Jobs?PerPage=100
     link_regex: '^https?://(www\.)?caribbeanjobs\.com/[^/?#]+-Job-\d+\.aspx$'
     title_from: caribbeanjobs
 
@@ -75,7 +76,7 @@ sources:
     company: (Government of T&T)
     location: tt
     urls:
-      - https://employtt.gov.tt/jobs
+      - https://employtt.gov.tt/jobs/list
     link_regex: '^https?://(www\.)?employtt\.gov\.tt/jobs/view/\d+'
 
   - name: JobsTT
@@ -93,10 +94,10 @@ sources:
     urls: [https://ngc.co.tt/career-opportunities/]
 
   - name: Republic Bank (RFHL)
-    type: page_watch
+    type: manual
     company: Republic Bank
-    location: tt
-    urls: [https://rfhl.com/trinidad-and-tobago/en/bank/about/career-opportunities]
+    url: https://rfhl.com/trinidad-and-tobago/en/bank/about/career-opportunities
+    why: site blocks automated access (403) - Republic also advertises on CaribbeanJobs, which is checked
 
   - name: JMMB
     type: page_watch
@@ -162,12 +163,10 @@ sources:
     search_terms: [Trinidad]
 
   - name: The Hive Careers (T&T recruiter, remote IT roles)
-    type: links
+    type: manual
     company: (via The Hive)
-    location: filter
-    urls:
-      - https://careers-page.com/thehivecareers
-    link_regex: '^https?://(www\.)?careers-page\.com/thehivecareers/job/[A-Z0-9]+$'
+    url: https://careers-page.com/thehivecareers
+    why: job list is loaded by JavaScript - search it for "Trinidad"
 
   - name: Central Bank of T&T
     type: page_watch

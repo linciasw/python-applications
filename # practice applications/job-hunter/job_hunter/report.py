@@ -13,7 +13,7 @@ MAX_IN_DIGEST = 40
 def _line(j: dict, resumes: dict, new: bool) -> str:
     badge = "🆕 " if new else ""
     bits = [j["company"] or j["source"]]
-    if j.get("location") and len(j["location"]) < 60:
+    if j.get("location") and len(j["location"]) <= 90:
         bits.append(j["location"])
     if j.get("posted"):
         bits.append(j["posted"])

@@ -23,7 +23,7 @@ def session() -> requests.Session:
         s = requests.Session()
         s.headers.update({"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"})
         retry = Retry(total=2, backoff_factor=2, status_forcelist=[429, 500, 502, 503, 504],
-                      allowed_methods=["GET", "POST"])
+                      allowed_methods=["GET", "POST"], raise_on_status=False)
         s.mount("https://", HTTPAdapter(max_retries=retry))
         s.mount("http://", HTTPAdapter(max_retries=retry))
         _session = s
