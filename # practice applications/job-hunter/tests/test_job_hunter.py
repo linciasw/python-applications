@@ -124,3 +124,10 @@ def test_page_watch_finds_vacancies():
     cfg = {"name": "NGC", "company": "NGC"}
     jobs = links.parse_page_watch(html, "https://ngc.co.tt/career-opportunities/", cfg)
     assert [j.title for j in jobs] == ["ICT Analyst – Vacancy Notice"]
+
+
+def test_word_boundaries_and_remote_regions():
+    assert not S.keep(job("Enterprise Banking Lead", "Remote, United Kingdom"), "filter")
+    assert not S.keep(job("Enterprise Banking Lead"), "tt")  # "erp" inside "Enterprise"
+    assert not S.keep(job("Software Engineer", "Remote - USA"), "filter")
+    assert S.keep(job("Software Engineer", "Remote - Caribbean"), "filter")

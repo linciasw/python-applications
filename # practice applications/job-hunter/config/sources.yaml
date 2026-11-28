@@ -156,11 +156,10 @@ sources:
     location_search: Trinidad
 
   - name: Liberty Latin America (Flow / C&W Business)
-    type: icims
+    type: manual
     company: Liberty Latin America
-    base_url: https://careers-lla.icims.com
-    location: filter
-    search_terms: [Trinidad]
+    url: https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad
+    why: iCIMS blocks automated access (405) - search "Trinidad"
 
   - name: The Hive Careers (T&T recruiter, remote IT roles)
     type: manual

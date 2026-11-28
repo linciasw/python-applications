@@ -28,6 +28,7 @@ class Scorer:
         self.remote_re = c(r"\bremote\b|work from home|anywhere")
         self.allow_remote = loc.get("allow_remote", True)
         self.remote_penalty = loc.get("remote_penalty", -1)
+        self.remote_blocked = c(loc["remote_blocked"]) if loc.get("remote_blocked") else None
         self.min_score = profile.get("min_score", 5)
 
     def location_ok(self, job: Job, mode: str) -> bool:
@@ -36,6 +37,8 @@ class Scorer:
         job.remote = bool(self.remote_re.search(text))
         if mode == "tt" or self.tt.search(text):
             return True
+        if self.remote_blocked and self.remote_blocked.search(job.location):
+            return False
         return self.allow_remote and job.remote
 
     def score(self, job: Job) -> int:

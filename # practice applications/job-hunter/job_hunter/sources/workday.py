@@ -32,11 +32,17 @@ def fetch(cfg: dict) -> list[Job]:
     base = cfg["base_url"].rstrip("/")
     endpoint = f"{base}/wday/cxs/{cfg['tenant']}/{cfg['site']}/jobs"
     jobs: dict[str, Job] = {}
+    # Open the careers page first, like a browser, so the site sets its cookies.
+    try:
+        http.get(f"{base}/en-US/{cfg['site']}")
+    except Exception:
+        pass
     for term in cfg.get("search_terms") or [""]:
         for page in range(MAX_PAGES):
             payload = {"appliedFacets": {}, "limit": PAGE_SIZE,
                        "offset": page * PAGE_SIZE, "searchText": term}
-            data = http.post_json(endpoint, payload).json()
+            data = http.post_json(endpoint, payload,
+                                  headers={"Referer": f"{base}/en-US/{cfg['site']}", "Origin": base}).json()
             batch = parse(data, cfg)
             for j in batch:
                 # Workday's search already matched the location term, so an

@@ -59,9 +59,8 @@ def parse_links(html: str, page_url: str, cfg: dict) -> list[Job]:
         title = _caribbeanjobs_title(a) if cfg.get("title_from") == "caribbeanjobs" else _clean(a.get_text(" "))
         if not title or NAV_JUNK.match(title):
             continue
-        ctx = _context(a)
-        if ctx.startswith(title):
-            ctx = ctx[len(title):].strip(" -–|·")
+        ctx = _context(a).replace(title, " ")
+        ctx = _clean(re.sub(r"\bNot for me\b", " ", ctx, flags=re.I)).strip(" -–|·")
         job = Job(title=title, url=url, company=cfg.get("company", ""), source=cfg["name"],
                   location=ctx[:90])
         # Keep the longest title seen for the same URL (cards often repeat links).

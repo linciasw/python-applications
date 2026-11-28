@@ -26,9 +26,9 @@ title_keywords:
   - {pattern: "digital (transformation|solutions|product|innovation)|process improvement", weight: 8, track: automation}
   - {pattern: "(systems?|it|technical|solutions?) analyst", weight: 8, track: automation}
   - {pattern: "business (systems )?analyst", weight: 6, track: automation}
-  - {pattern: "integrat(ion|or)|hris|erp|crm|sharepoint|power platform|dynamics 365", weight: 6, track: automation}
+  - {pattern: "integrat(ion|or)|\\bhris\\b|\\berp\\b|\\bcrm\\b|sharepoint|power platform|dynamics 365", weight: 6, track: automation}
   # --- Infrastructure / security / cloud ---
-  - {pattern: "cloud|azure|aws", weight: 6, track: automation}
+  - {pattern: "\\bcloud\\b|\\bazure\\b|\\baws\\b", weight: 6, track: automation}
   - {pattern: "cyber|information security|security (analyst|engineer|specialist)|\\bsoc\\b", weight: 6, track: software}
   - {pattern: "network (engineer|administrator|analyst|specialist)", weight: 5, track: automation}
   - {pattern: "systems? (administrator|engineer)|infrastructure|active directory|microsoft 365|exchange", weight: 5, track: automation}
@@ -118,6 +118,8 @@ locations:
     - ", TT\\b"
   allow_remote: true
   remote_penalty: -1
+  # Remote jobs tied to one of these places usually need you to live there.
+  remote_blocked: "united states|\\busa?\\b|united kingdom|\\buk\\b|canada|india|philippines|australia|germany|ireland|spain|mexico|brazil|south africa|chile|colombia|costa rica|poland|europe|emea|apac"
 
 # Jobs scoring below this are hidden.
 min_score: 5
