@@ -8,7 +8,7 @@ be read automatically, so open it yourself about once a week.
 
 | Employer | Why | Careers site | Check |
 |---|---|---|---|
-| Republic Bank (RFHL) | Has a Group Digital Transformation Division that has hired back-end, web and mobile developers and AQA engineers | [rfhl.com](https://rfhl.com/trinidad-and-tobago/en/bank/about/career-opportunities) + adverts on CaribbeanJobs | Auto |
+| Republic Bank (RFHL) | Has a Group Digital Transformation Division that has hired back-end, web and mobile developers and AQA engineers | [rfhl.com](https://rfhl.com/trinidad-and-tobago/en/bank/about/career-opportunities) + adverts on CaribbeanJobs | Auto via CaribbeanJobs (its own site blocks bots) |
 | First Citizens | Internal moves and ICT category openings | [careers.firstcitizenstt.com](https://careers.firstcitizenstt.com/go/Information%2C-Communication-&-Technology-Jobs/4147201/) | Auto |
 | Scotiabank T&T | Global tech organisation; T&T roles listed on its main jobs site | [jobs.scotiabank.com](https://jobs.scotiabank.com) | Auto (added) |
 | CIBC Caribbean | Regional roles that can be based in Trinidad; advertises on CaribbeanJobs | via CaribbeanJobs | Auto |
@@ -24,7 +24,7 @@ be read automatically, so open it yourself about once a week.
 
 | Employer | Why | Careers site | Check |
 |---|---|---|---|
-| Liberty Latin America (Flow, C&W Business) | Network, security and engineering roles based in Trincity | [careers-lla.icims.com](https://careers-lla.icims.com) | Auto (added) |
+| Liberty Latin America (Flow, C&W Business) | Network, security and engineering roles based in Trincity | [careers-lla.icims.com](https://careers-lla.icims.com/jobs/search?ss=1&searchKeyword=Trinidad) | Hand (site blocks bots) |
 | Digicel | Digital payments and enterprise IT | [careers.digicelgroup.com](https://careers.digicelgroup.com/go/Featured-Jobs/767702/) | Auto |
 | TSTT / bmobile | Has hired in IT Networks & Cloud and Enterprise PMO | via CaribbeanJobs | Auto |
 
@@ -32,7 +32,7 @@ be read automatically, so open it yourself about once a week.
 
 | Employer | Why | Careers site | Check |
 |---|---|---|---|
-| Shell | Global IT and data roles | [Workday](https://shell.wd3.myworkdayjobs.com/en-GB/ShellCareers) | Auto |
+| Shell | Global IT and data roles | [Workday](https://shell.wd3.myworkdayjobs.com/en-GB/ShellCareers?q=Trinidad) | Hand (rate-limits bots) |
 | bp Trinidad & Tobago | Largest local producer, offering competitive pay | [careers.bp.com](https://careers.bp.com/search-jobs?location=Trinidad%20and%20Tobago) | Hand |
 | NGC | State energy company | [ngc.co.tt](https://ngc.co.tt/career-opportunities/) | Auto |
 | Heritage Petroleum | Its recent hiring rounds included IT positions | via CaribbeanJobs | Auto |
@@ -55,7 +55,7 @@ be read automatically, so open it yourself about once a week.
 |---|---|
 | [CaribbeanJobs, IT category (Trinidad)](https://www.caribbeanjobs.com/ShowResults.aspx?Category=3&SortBy=Relevance&rbloc=124&lr=4) | Auto |
 | [JobsTT](https://jobstt.com/) | Auto |
-| [The Hive Careers](https://careers-page.com/thehivecareers), a recruiter posting remote systems analyst and data engineer roles in T&T | Auto (added) |
+| [The Hive Careers](https://careers-page.com/thehivecareers), a recruiter posting remote systems analyst and data engineer roles in T&T | Hand (search "Trinidad") |
 | [LinkedIn](https://www.linkedin.com/jobs/) | Hand. Set up job alerts, because LinkedIn doesn't allow scraping |
 
 ## Still to add (next pass)
