@@ -4,7 +4,7 @@
   "first_seen": "2026-11-27",
   "id": "1568b462f303",
   "last_seen": "2026-11-27",
-  "location": "System Engineer Voice Outsourcing Ltd (Trinidad & Tobago)",
+  "location": "Voice Outsourcing Ltd (Trinidad & Tobago)",
   "posted": "",
   "reasons": [
    "title: System Engineer"
@@ -39,7 +39,7 @@
   "first_seen": "2026-11-27",
   "id": "55da9b8578c6",
   "last_seen": "2026-11-27",
-  "location": "AI & Digital Transformation Specialists \u2013 UNV Talent Pool United Nations Development Programme \u2013 United Nations",
+  "location": "United Nations Development Programme \u2013 United Nations",
   "posted": "",
   "reasons": [
    "title: AI"
@@ -50,6 +50,23 @@
   "title": "AI & Digital Transformation Specialists \u2013 UNV Talent Pool",
   "track": "data",
   "url": "https://www.caribbeanjobs.com/AI-Digital-Transformation-Specialists-UNV-Job-242033.aspx"
+ },
+ "9c869513043b": {
+  "company": "(Government of T&T)",
+  "first_seen": "2026-11-27",
+  "id": "9c869513043b",
+  "last_seen": "2026-11-27",
+  "location": "Ministry of Land and Legal Affairs",
+  "posted": "",
+  "reasons": [
+   "title: Infrastructure"
+  ],
+  "remote": false,
+  "score": 5,
+  "source": "EmployTT (Government)",
+  "title": "Manager, Networks and Infrastructure",
+  "track": "automation",
+  "url": "https://employtt.gov.tt/jobs/view/2927"
  },
  "a2f2702e0f63": {
   "company": "Guardian Group",
@@ -73,7 +90,7 @@
   "first_seen": "2026-11-27",
   "id": "a672cd33fcf3",
   "last_seen": "2026-11-27",
-  "location": "IT Infrastructure & Data Centre Specialists \u2013 UNV Talent Pool United Nations Development Programme \u2013 United Nations",
+  "location": "United Nations Development Programme \u2013 United Nations",
   "posted": "",
   "reasons": [
    "title: Infrastructure"
@@ -90,7 +107,7 @@
   "first_seen": "2026-11-27",
   "id": "ab414b2c1a49",
   "last_seen": "2026-11-27",
-  "location": "Software Engineers & Open Source Specialists \u2013 UNV Talent Pool United Nations Development Programme \u2013 United Nations",
+  "location": "United Nations Development Programme \u2013 United Nations",
   "posted": "",
   "reasons": [
    "title: Software Engineer"
@@ -107,7 +124,7 @@
   "first_seen": "2026-11-27",
   "id": "c8f1e9be9086",
   "last_seen": "2026-11-27",
-  "location": "Not for me IT Technician NIPDEC Not disclosed Updated 25/11/2026 D'Martin/Chaguaramas To provide hardware and software maintenance, training, and recommendations about future planning and development of resources. Save This Job Show More",
+  "location": "Not for me IT Technician NIPDEC Not disclosed Updated 25/11/2026 D'Martin/Chaguaramas To p",
   "posted": "",
   "reasons": [
    "title: IT"
@@ -118,6 +135,23 @@
   "title": "IT Technician",
   "track": "automation",
   "url": "https://www.caribbeanjobs.com/IT-Technician-Job-242245.aspx"
+ },
+ "cfddd24aa18f": {
+  "company": "(Government of T&T)",
+  "first_seen": "2026-11-27",
+  "id": "cfddd24aa18f",
+  "last_seen": "2026-11-27",
+  "location": "National Insurance Property Development Company Limited (NIPDEC)",
+  "posted": "",
+  "reasons": [
+   "title: IT"
+  ],
+  "remote": false,
+  "score": 5,
+  "source": "EmployTT (Government)",
+  "title": "IT Technician",
+  "track": "automation",
+  "url": "https://employtt.gov.tt/jobs/view/2948"
  },
  "e348402ea8c6": {
   "company": "(various)",
@@ -142,7 +176,7 @@
   "first_seen": "2026-11-27",
   "id": "e72ef5cee796",
   "last_seen": "2026-11-27",
-  "location": "Group IT Audit Senior - ANSA McAL Limited ANSA McAL Group of Companies",
+  "location": "ANSA McAL Group of Companies",
   "posted": "",
   "reasons": [
    "title: IT",
@@ -154,5 +188,24 @@
   "title": "Group IT Audit Senior - ANSA McAL Limited",
   "track": "automation",
   "url": "https://www.caribbeanjobs.com/Group-IT-Audit-Senior-ANSA-Job-242359.aspx"
+ },
+ "fb194fedf447": {
+  "company": "TransUnion",
+  "first_seen": "2026-11-27",
+  "id": "fb194fedf447",
+  "last_seen": "2026-11-27",
+  "location": "Remote, United Kingdom",
+  "posted": "Posted 14 Days Ago",
+  "reasons": [
+   "title: erp",
+   "+1 Lead",
+   "remote"
+  ],
+  "remote": true,
+  "score": 6,
+  "source": "TransUnion",
+  "title": "Enterprise Banking Lead",
+  "track": "automation",
+  "url": "https://transunion.wd5.myworkdayjobs.com/en-US/TransUnion/job/Remote-United-Kingdom/Enterprise-Banking-Lead_19043209"
  }
 }
