@@ -44,4 +44,4 @@
 
 </details>
 
-Full list: https://github.com/linciasw/python-applications/blob/job-hunter/%23%20practice%20applications/job-hunter/results/latest.md
+Full list: https://github.com/linciasw/python-applications/blob/main/%23%20practice%20applications/job-hunter/results/latest.md
